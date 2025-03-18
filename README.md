@@ -2,7 +2,7 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
+| Simin Fan | 353791|
 | | |
 | Shuo Wen | 307251 |
 
