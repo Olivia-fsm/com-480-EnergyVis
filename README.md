@@ -12,35 +12,36 @@
 
 **10% of the final grade**
 
-This is a preliminary milestone to let you set up goals for your final project and assess the feasibility of your ideas.
-Please, fill the following sections about your project.
-
-*(max. 2000 characters per section)*
 
 ### Dataset
 
-> Find a dataset (or multiple) that you will explore. Assess the quality of the data it contains and how much preprocessing / data-cleaning it will require before tackling visualization. We recommend using a standard dataset as this course is not about scraping nor data processing.
->
-> Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)), you could use also the DataSets proposed by the ENAC (see the Announcements section on Zulip).
+**Data Source.** This data analysis project focuses on the [Global Power Plant Database](https://datasets.wri.org/datasets/global-power-plant-database), a comprehensive, open-source inventory of power plants around the world. Compiled by the World Resources Institute (WRI) and various international collaborators, this database provides detailed information on power-generating facilities, including their geographic location, operational status, generation capacity, fuel type, and ownership structure. The database was built entirely from open sources, which are publicly available on the internet, including data from national government agencies, reports from companies that build power plants or provide their components, data from public utilities, and information from multinational organizations. The World Resources Institute is a global research non-profit organization which studies sustainable practices for business, economics, finance and governance.
+
+**Description of the data.** The dataset contains information on more than 34000 power plants around the world. For each power plant, the database provides:
+- Geographical information: its location and country.
+- Electricity production information: its fuel type(s) and capacity.
+- Information about the plant: its owner, year of commission, etc.
 
 ### Problematic
+**Motivation.** The global energy landscape is undergoing a significant transformation as countries worldwide grapple with the challenge of meeting increasing energy demands while transitioning to more sustainable power sources. Understanding the current distribution, capacity, and characteristics of power generation facilities is crucial for policymakers, researchers, and industry stakeholders to make informed decisions about future energy investments and policies.
 
-> Frame the general topic of your visualization and the main axis that you want to develop.
-> - What am I trying to show with my visualization?
-> - Think of an overview for the project, your motivation, and the target audience.
+**Problem Statement.** Our analysis aims to explore the following features related to global power plant and energy distribution by visualization:
+
+1. **Geographic Distribution and Energy Mix Disparities**: How does the distribution of power plants and their generation capacities vary across regions and countries? 
+2. **Renewable and Green Energy Assessment**:  To what extent does each country adopt renewable/green energy resources instead of traditional fossil fuel-based ones?
+3. **Ownership and Market Analysis**: What is the ownership structure of energy power plants across various countries and regions (e.g. public, private or mixed). It could impact the future policy and decommission schedules and global carbon emissions.
+4. **Predictive Modelling for Energy Transitions**: As a stretch goal, we can develop predictive models to forecast the future power plant distribution and landscapes based on historical data.
+
 
 ### Exploratory Data Analysis
 
-> Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
+**Data preprocessing.** The datasets are in tabular format. Each row contains information on one individual power plant. During the preprocessing, we first remove the columns with a lot of missing values or unrelated to our problems or interests. Then, we add some attributes to the data. To visualize the continent-related distribution, we add the continent information based on the country names. Also, we divide the energy into renewable and non-renewable energy and add one attribute for this. Specifically, we consider Solar, Wind, Hydro, Geothermal, and Biomass as renewable energy and the others as non-renewable energy. We can also consider a different dichotomy: low CO2 vs high CO2 emissions.  
+
+**Data analysis.** Basic statistical analysis can be found in `preprocess.ipynb`. In that notebook, we display the distribution of fuel types around the world, as well as per continent. We also plot the portion of solar energy in the total energy mix for each country. We analyze the distribution of commissioning years as well as the distribution of power plant owners. The basic statistical analysis shows that the dataset provides many opportunities to analyze the energy mix of different countries.
 
 ### Related work
 
-
-> - What others have already done with the data?
-> - Why is your approach original?
-> - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-> - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+What has already been done: On the official website, the WRI shows a map with the location and capacity of all the power plants around the world. It can be a nice reference to see the distribution of various types of energy resources. However, with a fixed plot, they do not visualize the evolution of the energy mix w.r.t. time and countries. Through analyzing the evolution of the composition of global energy power plants, we hope to uncover insightful findings about the energy transition and shed light on future energy structures. 
 
 ## Milestone 2 (18th April, 5pm)
 
